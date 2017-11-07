@@ -18,3 +18,4 @@
 (setq backup-directory-alist `(("." . "~/.saves")))
 
 (load-theme 'tango-dark t)
+(global-linum-mode t)
