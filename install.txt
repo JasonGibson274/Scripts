@@ -1,1 +1,8 @@
+git bash prompt
 https://github.com/magicmonty/bash-git-prompt
+
+curses system stats
+glances
+
+top right stats ubuntu
+indicator-multiload
