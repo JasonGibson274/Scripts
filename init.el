@@ -18,4 +18,14 @@
 (setq backup-directory-alist `(("." . "~/.saves")))
 
 (load-theme 'tango-dark t)
+
+(package-initialize)
+(require 'linum-relative)
 (global-linum-mode t)
+(linum-relative-global-mode t)
+(setq column-number-mode t)
+
+; MELPA
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
