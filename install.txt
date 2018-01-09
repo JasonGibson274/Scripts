@@ -6,3 +6,7 @@ glances
 
 top right stats ubuntu
 indicator-multiload
+
+
+fans
+https://ineed.coffee/3838/a-beginners-tutorial-for-mbpfan-under-ubuntu/
