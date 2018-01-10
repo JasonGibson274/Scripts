@@ -22,7 +22,7 @@
 (package-initialize)
 (require 'linum-relative)
 (global-linum-mode t)
-(linum-relative-global-mode t)
+;(linum-relative-global-mode t)
 (setq column-number-mode t)
 
 ; MELPA
@@ -32,3 +32,12 @@
 
 ; auto-complete
 (ac-config-default)
+
+; ace jumping
+(add-to-list 'load-path "which-folder-ace-jump-mode-file-in/")
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+; ace window
+(global-set-key (kbd "M-p") 'ace-window)
+(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
