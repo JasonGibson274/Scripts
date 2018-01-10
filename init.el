@@ -40,3 +40,7 @@
 (global-set-key (kbd "M-p") 'ace-window)
 (require 'ace-jump-mode)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+
+; markdown mode
+(custom-set-variables
+ '(markdown-command "/usr/bin/pandoc"))
