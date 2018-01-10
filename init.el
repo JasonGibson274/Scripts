@@ -28,6 +28,7 @@
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 ; auto-complete
+(require 'auto-complete)
 (ac-config-default)
 
 ; ace jumping
@@ -37,4 +38,5 @@
 
 ; ace window
 (global-set-key (kbd "M-p") 'ace-window)
+(require 'ace-jump-mode)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
