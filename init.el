@@ -3,9 +3,6 @@
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
 
-; move windows using shift arrow
-(windmove-default-keybindings)
-
 ; clean up white spaces on save
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
