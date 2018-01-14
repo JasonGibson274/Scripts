@@ -44,3 +44,13 @@
 ; markdown mode
 (custom-set-variables
  '(markdown-command "/usr/bin/pandoc"))
+
+; get rid of menu bar
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
+; startup screen
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+(setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
+;(setq dashboard-startup-banner 'logo)
