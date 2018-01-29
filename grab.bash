@@ -1,4 +1,4 @@
 #! /bin/bash
 
-cp ~/.emacs/init.el .
+cp ~/.emacs.d/init.el .
 cp ~/.editorconfig .

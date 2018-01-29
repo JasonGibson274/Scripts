@@ -54,3 +54,11 @@
 (dashboard-setup-startup-hook)
 (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
 ;(setq dashboard-startup-banner 'logo)
+
+(require 'ox-latex)
+(unless (boundp 'org-latex-classes)
+  (setq org-latex-classes nil))
+(add-to-list 'org-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")))
