@@ -38,6 +38,12 @@ floating_modifier $mod
 
 # init programs into windows
 exec --no-startup-id i3-msg 'workspace 1; exec terminator'
+exec --no-startup-id i3-msg 'workspace 2; exec emacs'
+exec --no-startup-id i3-msg 'workspace 3; exec firefox'
+exec --no-startup-id i3-msg 'workspace 4; exec evolution'
+
+# configure lock
+exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
