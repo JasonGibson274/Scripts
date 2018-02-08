@@ -117,6 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # ros setup
+source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 export PATH="/home/jason/.cask/bin:$PATH"
 source ~/catkin_ws/src/autorally/autorally_util/setupEnvLocal.sh

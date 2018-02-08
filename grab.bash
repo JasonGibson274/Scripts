@@ -1,6 +1,6 @@
 #! /bin/bash
 
-cp ~/.emacs.d/init.el .
-cp ~/.editorconfig .
-cp ~/.i3/config .
-cp ~/.bashrc .
+cp --parents ~/.emacs.d/init.el all/.emacs
+cp ~/.editorconfig all/.
+cp --parents ~/.i3/config all/.i3
+cp ~/.bashrc all/.
