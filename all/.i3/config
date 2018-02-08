@@ -42,6 +42,10 @@ exec --no-startup-id i3-msg 'workspace 2; exec emacs'
 exec --no-startup-id i3-msg 'workspace 3; exec firefox'
 exec --no-startup-id i3-msg 'workspace 4; exec evolution'
 
+# i3 bar icons
+exec --no-startup-id nm-applet
+exec --no-startup-id pasystray
+
 # configure lock
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'
 
