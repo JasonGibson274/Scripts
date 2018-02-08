@@ -1,3 +1,8 @@
+; MELPA
+(require 'package)
+(add-to-list 'package-archives
+       '("melpa-stable" . "https://stable.melpa.org/packages/"))
+
 ; tabs
 (setq-default tab-width 4)
 (defvaralias 'c-basic-offset 'tab-width)
@@ -18,14 +23,10 @@
 
 (package-initialize)
 (require 'linum-relative)
+(require 'linum)
 (global-linum-mode t)
 ;(linum-relative-global-mode t)
 (setq column-number-mode t)
-
-; MELPA
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 ; auto-complete
 (require 'auto-complete)
@@ -54,11 +55,16 @@
 (dashboard-setup-startup-hook)
 (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
 ;(setq dashboard-startup-banner 'logo)
+(setq dashboard-items '((recents	. 10)
+                        (bookmarks . 0)
+                        (projects . 0)
+                        (agenda . 0)
+                        (registers . 0)))
 
 (require 'ox-latex)
 (unless (boundp 'org-latex-classes)
   (setq org-latex-classes nil))
 (add-to-list 'org-latex-classes
-             '("article"
-               "\\documentclass{article}"
-               ("\\section{%s}" . "\\section*{%s}")))
+       '("article"
+         "\\documentclass{article}"
+         ("\\section{%s}" . "\\section*{%s}")))
