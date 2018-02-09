@@ -116,15 +116,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
 # ros setup
 source /opt/ros/kinetic/setup.bash
 export PATH="/home/jason/.cask/bin:$PATH"
-#source ~/catkin_ws/autorally/src/autorally/autorally_util/setupEnvLocal.sh
-
 # ros workspace alias
 alias autoc='source ~/catkin_ws/autorally/devel/setup.bash'
-alias rjc='source ~/catkin_ws/rj/devel/setup.bash'
-alias perc='source ~/catkin_ws/personal/devel/setup.bash'
+#alias rjc='source ~/catkin_ws/rj/devel/setup.bash'
+#alias perc='source ~/catkin_ws/personal/devel/setup.bash'
+source ~/catkin_ws/autorally/devel/setup.bash
+source ~/catkin_ws/autorally/src/autorally/autorally_util/setupEnvLocal.sh
 
 # Git configuration
 GIT_PROMPT_ONLY_IN_REPO=1

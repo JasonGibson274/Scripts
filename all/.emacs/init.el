@@ -37,9 +37,9 @@
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-; ace window
+                                        ; ace window
+(require 'ace-window)
 (global-set-key (kbd "M-p") 'ace-window)
-(require 'ace-jump-mode)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
 ; markdown mode
