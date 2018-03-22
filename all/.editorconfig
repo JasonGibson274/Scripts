@@ -37,7 +37,7 @@ indent_size = 2
 # c++ files
 [*.{c, cpp, h, hpp}]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 # gazebo files
 [*.{world, urdf, launch, sdf}]
