@@ -68,3 +68,32 @@
        '("article"
          "\\documentclass{article}"
          ("\\section{%s}" . "\\section*{%s}")))
+
+; function args
+(add-to-list 'load-path "~/.emacs.d/function-args")
+(require 'function-args)
+(fa-config-default)
+; case insnsitive searching
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
+; git diff
+(require 'git-gutter)
+(global-git-gutter-mode +1)
+(git-gutter:linum-setup)
+(custom-set-variables
+ '(git-gutter:modified-sign "  ") ;; two space
+ '(git-gutter:added-sign "++")    ;; multiple character is OK
+ '(git-gutter:deleted-sign "--"))
+
+(set-face-background 'git-gutter:modified "purple") ;; background color
+(set-face-foreground 'git-gutter:added "green")
+(set-face-foreground 'git-gutter:deleted "red")
+(custom-set-variables
+ '(git-gutter:update-interval 2))
+
+
+; show matching parens
+(show-paren-mode 1)
+
+; always create closing pair
+(electric-pair-mode 1)
