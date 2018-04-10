@@ -33,11 +33,11 @@
 (ac-config-default)
 
 ; ace jumping
-(add-to-list 'load-path "which-folder-ace-jump-mode-file-in/")
 (require 'ace-jump-mode)
+(add-to-list 'load-path "which-folder-ace-jump-mode-file-in/")
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-                                        ; ace window
+; ace window
 (require 'ace-window)
 (global-set-key (kbd "M-p") 'ace-window)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
@@ -55,7 +55,7 @@
 (dashboard-setup-startup-hook)
 (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
 ;(setq dashboard-startup-banner 'logo)
-(setq dashboard-items '((recents	. 10)
+(setq dashboard-items '((recents	. 20)
                         (bookmarks . 0)
                         (projects . 0)
                         (agenda . 0)
