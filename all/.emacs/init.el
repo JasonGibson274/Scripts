@@ -97,3 +97,29 @@
 
 ; always create closing pair
 (electric-pair-mode 1)
+
+; markdown
+;(require 'markdown-mode)
+;(use-package markdown-mode
+;  :ensure t
+;  :commands (markdown-mode gfm-mode)
+;  :mode (("README\\.md\\'" . gfm-mode)
+;         ("\\.md\\'" . markdown-mode)
+;         ("\\.markdown\\'" . markdown-mode))
+;  :init (setq markdown-command "multimarkdown"))
+
+; evil mode
+;(require 'evil)
+;(evil-mode 1)
+
+                                        ; ctags
+
+;syntax checking
+(require 'modern-cpp-font-lock)
+(modern-c++-font-lock-global-mode t)
+
+;flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(setq-default flycheck-disabled-checkers '(c/c++-clang))
+
+;

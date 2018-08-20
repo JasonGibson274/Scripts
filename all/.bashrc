@@ -125,7 +125,7 @@ alias autoc='source ~/catkin_ws/autorally/devel/setup.bash'
 alias rjc='source ~/catkin_ws/rj/devel/setup.bash'
 alias perc='source ~/catkin_ws/personal/devel/setup.bash'
 source ~/catkin_ws/autorally/devel/setup.bash
-source ~/catkin_ws/autorally/src/autorally/autorally_util/setupEnvLocal.sh
+rjc
 
 # Git configuration
 GIT_PROMPT_ONLY_IN_REPO=1

@@ -50,7 +50,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 
 # configure lock
-exec --no-startup-id xautolock -time 1 -locker 'i3lock -d -c 000000'
+exec --no-startup-id xautolock -time 15 -locker 'i3lock -d -c 000000'
 
 # wallpaper
 exec /usr/bin/feh --bg-scale ~/.i3/nest_point.png
@@ -60,6 +60,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# lock computer
+bindsym $mod+Shift+x exec i3lock -d -c 000000
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
