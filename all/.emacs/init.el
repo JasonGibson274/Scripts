@@ -1,7 +1,9 @@
 ; MELPA
 (require 'package)
 (add-to-list 'package-archives
-       '("melpa-stable" . "https://stable.melpa.org/packages/"))
+  '("melpa-stable" . "https://stable.melpa.org/packages/"))
+
+(set-face-attribute 'default nil :height 150)
 
 ;remap caps lock
 (global-set-key "∇" 'Control-X-prefix)
