@@ -3,7 +3,8 @@
 (add-to-list 'package-archives
   '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
-(set-face-attribute 'default nil :height 150)
+;(set-face-attribute 'default nil :height 150)
+(set-face-attribute 'default nil :height 100)
 
 ;remap caps lock
 (global-set-key "∇" 'Control-X-prefix)
@@ -115,10 +116,11 @@
 ;  :init (setq markdown-command "multimarkdown"))
 
 ; evil mode
-;(require 'evil)
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
 ;(evil-mode 1)
 
-                                        ; ctags
+; ctags
 
 ;syntax checking
 ;(require 'modern-cpp-font-lock)

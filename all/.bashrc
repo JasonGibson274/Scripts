@@ -118,7 +118,7 @@ fi
 
 
 source /opt/ros/melodic/setup.bash
-alias arc='source ~/catkin_ws/ar/devel/setup.bash'
+alias arc='source ~/catkin_ws/ar/devel/setup.bash && source /home/jason/catkin_ws/ar/src/autorally/autorally_util/setupEnvLocal.sh'
 alias rjc='source ~/catkin_ws/rj/devel/setup.bash'
 rjc
 
@@ -144,7 +144,13 @@ source ~/.bash-git-prompt/gitprompt.sh
 
 # alias
 alias open=xdg-open
-alias core-on="xrandr --output HDMI-0 --mode 1920x1080"
-alias core-off="xrandr --output HDMI-0 --off"
+alias core-on="xrandr --output DP-3 --mode 1920x1080"
+alias core-off="xrandr --output DP-3 --off"
 
 export PATH="/home/jason/.cask/bin:$PATH"
+
+export CUDA_HOME=/usr/local/cuda 
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
+ 
+PATH=${CUDA_HOME}/bin:${PATH} 
+export PATH

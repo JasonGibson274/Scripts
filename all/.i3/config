@@ -11,7 +11,8 @@
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 12
+font pango:monospace 10
+
 
 #tray_output primary
 
@@ -26,9 +27,7 @@ font pango:monospace 12
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-#exec xrandr --dpi 180
-#exec /usr/bin/gnome-settings-daemon
-#exec gsettings set org.gnome.desktop.interface scaling-factor 2
+exec xrandr --dpi 200
 
 set $mod Mod4
 
@@ -43,15 +42,24 @@ set $right semicolon
 floating_modifier $mod
 
 # init programs into windows
-exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal --zoom=1.4'
+exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal --zoom=2.0'
 exec --no-startup-id i3-msg 'workspace 2; exec emacs'
 exec --no-startup-id i3-msg 'workspace 3; exec firefox'
 for_window [class="Firefox"] move container to workspace 3
 exec --no-startup-id i3-msg 'workspace 4; exec mailspring'
 for_window [class="Mailspring"] move container to workspace 4
-exec --no-startup-id i3-msg 'workspace 10; exec gnome-terminal --zoom=1.4'
+exec --no-startup-id i3-msg 'workspace 10; exec gnome-terminal --zoom=2.0'
 exec --no-startup-id i3-msg 'workspace 5; exec slack'
 for_window [class="Slack"] move container to workspace 5
+
+# backlight
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+
+# notification
+exec killall -q notify-osd
+exec --no-startup-id dunst
 
 
 # i3 bar icons
@@ -65,7 +73,7 @@ exec --no-startup-id xautolock -time 15 -locker 'i3lock -d -c 000000'
 exec /usr/bin/feh --bg-scale ~/.i3/nest_point.png
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal --zoom=1.4
+bindsym $mod+Return exec gnome-terminal --zoom=2.0
 
 # kill focused window
 bindsym $mod+Shift+q kill
