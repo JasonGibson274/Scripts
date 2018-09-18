@@ -144,8 +144,8 @@ source ~/.bash-git-prompt/gitprompt.sh
 
 # alias
 alias open=xdg-open
-alias core-on="xrandr --output DP-3 --mode 1920x1080"
-alias core-off="xrandr --output DP-3 --off"
+alias core-on="xrandr --output DP3 --mode 1920x1080"
+alias core-off="xrandr --output DP3 --off"
 
 export PATH="/home/jason/.cask/bin:$PATH"
 
