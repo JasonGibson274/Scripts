@@ -40,13 +40,13 @@ set $right semicolon
 floating_modifier $mod
 
 # init programs into windows
-exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal --zoom=1.0'
+exec --no-startup-id i3-msg 'workspace 1; exec terminator'
 exec --no-startup-id i3-msg 'workspace 2; exec emacs'
 exec --no-startup-id i3-msg 'workspace 3; exec firefox'
 for_window [class="Firefox"] move container to workspace 3
 exec --no-startup-id i3-msg 'workspace 4; exec mailspring'
 for_window [class="Mailspring"] move container to workspace 4
-exec --no-startup-id i3-msg 'workspace 10; exec gnome-terminal --zoom=1.0'
+exec --no-startup-id i3-msg 'workspace 10; exec terminator'
 exec --no-startup-id i3-msg 'workspace 5; exec slack'
 for_window [class="Slack"] move container to workspace 5
 
@@ -71,7 +71,7 @@ exec --no-startup-id xautolock -time 15 -locker 'i3lock -d -c 000000'
 exec /usr/bin/feh --bg-scale ~/.i3/nest_point.png
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal --zoom=1.0
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill

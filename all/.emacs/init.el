@@ -54,7 +54,8 @@
 (require 'dashboard)
 (require 'projectile)
 (dashboard-setup-startup-hook)
-(setq dashboard-banner-logo-title "I started my life with a single absolute: that the world was mine to shape in the image of my highest values and never to be given up to a lesser standard, no matter how long or hard the struggle.")
+(setq dashboard-banner-logo-title
+"Contradictions do not exist. Whenever you think that you are facing a contradiction, check your premises. You will find that one of them is wrong.")
 (setq dashboard-startup-banner "/home/jason/.emacs.d/AtlasShrugged.png")
 (setq dashboard-items '((recents  . 20)
                         (bookmarks . 0)
