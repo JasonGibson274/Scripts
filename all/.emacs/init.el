@@ -3,18 +3,17 @@
 (add-to-list 'package-archives
   '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
-;(set-face-attribute 'default nil :height 150)
-(set-face-attribute 'default nil :height 100)
+(load-theme 'tango-dark t)
 
-;remap caps lock
-(global-set-key "∇" 'Control-X-prefix)
+; set text height, for high dpi displays
+(set-face-attribute 'default nil :height 100)
 
 ; tabs
 (setq-default tab-width 4)
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
 
-; clean up white s3760paces on save
+; clean up white spaces on save
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
 ; editorcondif setup
@@ -25,9 +24,8 @@
 ; moves backups file out of local directory
 (setq backup-directory-alist `(("." . "~/.saves")))
 
-(load-theme 'tango-dark t)
-
 (package-initialize)
+; init linum for line numberings
 (require 'linum)
 (global-linum-mode t)
 (setq column-number-mode t)
@@ -117,9 +115,9 @@
 ;  :init (setq markdown-command "multimarkdown"))
 
 ; evil mode
-;(add-to-list 'load-path "~/.emacs.d/evil")
-;(require 'evil)
-;(evil-mode 0)
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
+(evil-mode 0)
 
 ; ctags
 

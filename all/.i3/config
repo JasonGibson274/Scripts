@@ -43,9 +43,9 @@ floating_modifier $mod
 exec --no-startup-id i3-msg 'workspace 1; exec terminator'
 exec --no-startup-id i3-msg 'workspace 2; exec emacs'
 exec --no-startup-id i3-msg 'workspace 3; exec firefox'
-for_window [class="Firefox"] move container to workspace 3
-exec --no-startup-id i3-msg 'workspace 4; exec mailspring'
-for_window [class="Mailspring"] move container to workspace 4
+#for_window [class="Firefox"] move container to workspace 3
+exec --no-startup-id i3-msg 'workspace 4; exec thunderbird'
+for_window [class="thunderbird"] move container to workspace 4
 exec --no-startup-id i3-msg 'workspace 10; exec terminator'
 exec --no-startup-id i3-msg 'workspace 5; exec slack'
 for_window [class="Slack"] move container to workspace 5
