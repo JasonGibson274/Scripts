@@ -89,6 +89,11 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# switch to home config
+bindsym $mod+y exec xrandr --auto --output DP1 --mode 3840x2160 --right-of DP2 && xrandr --output eDP1 --off && xrandr --output DP1 --primary
+# mobile config
+bindsym $mod+u exec xrandr --output DP1 --off && xrandr  --output DP2 --off && xrandr --output eDP1 --auto --primary
+
 # change focus
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
