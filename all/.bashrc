@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+  # We have color support; assume it's compliant with Ecma-48
+  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+  # a case would tend to support setf rather than setaf.)
+  color_prompt=yes
     else
-	color_prompt=
+  color_prompt=
     fi
 fi
 
@@ -149,10 +149,10 @@ alias core-off="xrandr --output DP3 --off"
 
 export PATH="/home/jason/.cask/bin:$PATH"
 
-export CUDA_HOME=/usr/local/cuda-10.0/bin 
+export CUDA_HOME=/usr/local/cuda-10.0/bin
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
- 
-PATH=${CUDA_HOME}/bin:${PATH} 
+
+PATH=${CUDA_HOME}/bin:${PATH}
 export PATH
 
 export PATH="/home/jason/.cask/bin:$PATH"

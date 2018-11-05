@@ -21,7 +21,7 @@
 (require 'editorconfig)
 (editorconfig-mode 1)
 
-; moves backups file out of local directory
+; moves backups file out of local director
 (setq backup-directory-alist `(("." . "~/.saves")))
 
 (package-initialize)
@@ -56,8 +56,8 @@
 "Contradictions do not exist. Whenever you think that you are facing a contradiction, check your premises. You will find that one of them is wrong.")
 (setq dashboard-startup-banner "/home/jason/.emacs.d/AtlasShrugged.png")
 (setq dashboard-items '((recents  . 20)
-                        (bookmarks . 0)
-                        (projects . 0)
+                        (bookmarks . 10)
+                        (projects . 10)
                         (agenda . 0)
                         (registers . 0)))
 
@@ -117,7 +117,7 @@
 ; evil mode
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
-(evil-mode 0)
+(evil-mode 1)
 
 ; ctags
 

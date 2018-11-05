@@ -7,3 +7,4 @@ cp ~/.bashrc all/.
 cp /etc/i3status.conf all/etc/.
 cp ~/.xinitrc all/.
 cp ~/.Xresources all/.
+cp ~/.gitconfig all/.
