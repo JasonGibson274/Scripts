@@ -119,15 +119,14 @@
 (require 'evil)
 (evil-mode 1)
 
-; ctags
-
-;syntax checking
-;(require 'modern-cpp-font-lock)
-;(modern-c++-font-lock-global-mode t)
-
-;flycheck
-;(add-hook 'after-init-hook #'global-flycheck-mode)
-;(setq-default flycheck-disabled-checkers '(c/c++-clang))
+(require 'flycheck)
+(global-flycheck-mode)
+(add-hook 'c++-mode-hook 'flycheck-mode)
+(add-hook 'c-mode-hook 'flycheck-mode)
+;((c++-mode . ((flycheck-gcc-include-path . ("/opt/ros/melodic/include")))))
+(add-hook 'c++-mode-hook
+          (lambda () (setq flycheck-clang-include-path
+                           (list (expand-file-name "/opt/ros/melodic/include:catkin_ws/rj/src")))))
 
 ;
 (custom-set-faces
