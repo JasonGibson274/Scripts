@@ -13,6 +13,9 @@
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
 
+(add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.cuh\\'" . c++-mode))
+
 ; clean up white spaces on save
 (add-hook 'before-save-hook 'whitespace-cleanup)
 

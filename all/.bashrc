@@ -120,6 +120,7 @@ fi
 source /opt/ros/melodic/setup.bash
 alias arc='source ~/catkin_ws/ar/devel/setup.bash && source /home/jason/catkin_ws/ar/src/autorally/autorally_util/setupEnvLocal.sh'
 alias rjc='source ~/catkin_ws/rj/devel/setup.bash'
+alias grc='source ~/catkin_ws/greenzie/devel/setup.bash'
 rjc
 
 
@@ -149,10 +150,8 @@ alias core-off="xrandr --output DP3 --off"
 
 export PATH="/home/jason/.cask/bin:$PATH"
 
-export CUDA_HOME=/usr/local/cuda-10.0/bin
-export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
+#export CUDA_HOME=/usr/local/cuda-10.0/bin
+#export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
 
-PATH=${CUDA_HOME}/bin:${PATH}
-export PATH
-
-export PATH="/home/jason/.cask/bin:$PATH"
+#PATH=${CUDA_HOME}/bin:${PATH}
+#export PATH
