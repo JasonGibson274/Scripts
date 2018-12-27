@@ -41,7 +41,8 @@ floating_modifier $mod
 
 # init programs into windows
 exec --no-startup-id i3-msg 'workspace 1; exec terminator'
-exec --no-startup-id i3-msg 'workspace 2; exec emacs'
+exec --no-startup-id i3-msg 'workspace 2; exec emacsclient -c'
+for_window [class="emacs"] move container to workspace 2
 exec --no-startup-id i3-msg 'workspace 3; exec firefox'
 #for_window [class="Firefox"] move container to workspace 3
 exec --no-startup-id i3-msg 'workspace 4; exec thunderbird'
@@ -52,8 +53,8 @@ for_window [class="Slack"] move container to workspace 5
 
 # backlight
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 1 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 1 # decrease screen brightness
 
 # notification
 exec killall -q notify-osd
@@ -93,6 +94,9 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+y exec xrandr --auto --output DP1 --mode 3840x2160 --right-of DP2 && xrandr --output eDP1 --off && xrandr --output DP1 --primary
 # mobile config
 bindsym $mod+u exec xrandr --output DP1 --off && xrandr  --output DP2 --off && xrandr --output eDP1 --auto --primary
+
+# start emacs
+bindsym $mod+t exec emacsclient -c
 
 # change focus
 bindsym $mod+$left focus left

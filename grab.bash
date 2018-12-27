@@ -9,4 +9,4 @@ cp ~/.xinitrc all/.
 cp ~/.Xresources all/.
 cp ~/.gitconfig all/.
 cp /etc/default/grub all/etc/.
-
+cp -r ~/.config/dunst .
