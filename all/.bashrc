@@ -150,8 +150,10 @@ alias core-off="xrandr --output DP3 --off"
 
 export PATH="/home/jason/.cask/bin:$PATH"
 
-#export CUDA_HOME=/usr/local/cuda-10.0/bin
-#export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
+export CUDA_HOME=/usr/local/cuda/bin
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
+PATH=${CUDA_HOME}/bin:${PATH}
+export PATH
 
-#PATH=${CUDA_HOME}/bin:${PATH}
-#export PATH
+#matlab
+PATH=${PATH}:/usr/local/MATLAB/R2018b/bin
