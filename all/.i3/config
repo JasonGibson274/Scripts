@@ -41,8 +41,8 @@ floating_modifier $mod
 
 # init programs into windows
 exec --no-startup-id i3-msg 'workspace 1; exec terminator'
-exec --no-startup-id i3-msg 'workspace 2; exec emacsclient -c'
-for_window [class="emacs"] move container to workspace 2
+#exec --no-startup-id i3-msg 'workspace 2; exec emacsclient -c'
+#for_window [class="emacs"] move container to workspace 2
 exec --no-startup-id i3-msg 'workspace 3; exec firefox'
 #for_window [class="Firefox"] move container to workspace 3
 exec --no-startup-id i3-msg 'workspace 4; exec thunderbird'
@@ -80,6 +80,9 @@ bindsym $mod+Shift+q kill
 # lock computer
 bindsym $mod+Shift+x exec i3lock -d -c 000000
 
+# launch clion
+bindsym $mod+Shift+t exec "bash -i -c clion.sh %f"
+
 #move current workspace
 bindsym $mod+q move workspace to output left
 
@@ -91,9 +94,9 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # switch to home config
-bindsym $mod+y exec xrandr --auto --output DP1 --mode 3840x2160 --left-of DP2 && xrandr --output eDP1 --off && xrandr --output DP2 --primary
+bindsym $mod+y exec xrandr --auto --output DP-1 --mode 3840x2160 --left-of DP-2 --primary && xrandr --output eDP-1 --off && xrandr --output DP-2 --rotate right
 # mobile config
-bindsym $mod+u exec xrandr --output DP1 --off && xrandr  --output DP2 --off && xrandr --output eDP1 --auto --primary
+bindsym $mod+u exec xrandr --output DP-1 --off && xrandr  --output DP-2 --off && xrandr --output eDP-1 --auto --primary
 
 # start emacs
 bindsym $mod+t exec emacsclient -c

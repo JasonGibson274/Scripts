@@ -121,8 +121,8 @@ source /opt/ros/melodic/setup.bash
 alias arc='source ~/catkin_ws/ar/devel/setup.bash && source /home/jason/catkin_ws/ar/src/autorally/autorally_util/setupEnvLocal.sh'
 alias rjc='source ~/catkin_ws/rj/devel/setup.bash'
 alias grc='source ~/catkin_ws/greenzie/devel/setup.bash'
-rjc
-
+alias alc='source ~/catkin_ws/alpha/devel/setup.bash'
+alc
 
 # Git configuration
 GIT_PROMPT_ONLY_IN_REPO=1
