@@ -8,4 +8,5 @@ cp ~/.xinitrc all/.
 cp ~/.Xresources all/.
 cp ~/.gitconfig all/.
 cp /etc/default/grub all/etc/.
+cp /etc/X11/xorg.conf all/etc/.
 cp -r ~/.config/dunst .
