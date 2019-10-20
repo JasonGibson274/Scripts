@@ -50,7 +50,7 @@ for_window [class="Slack"] move container to workspace 5
 # backlight
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1.0 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.6 # increase screen brightness
 
 # notification
 exec killall -q notify-osd
@@ -62,7 +62,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 
 # configure lock
-exec --no-startup-id xautolock -time 15 -locker 'i3lock -d -c 000000'
+exec --no-startup-id xautolock -time 15 -locker 'i3lock -d -c 000000 && systemctl suspend'
 
 # wallpaper
 exec /usr/bin/feh --bg-scale ~/.i3/nest_point.png
@@ -74,7 +74,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 
 # lock computer
-bindsym $mod+Shift+x exec i3lock -d -c 000000
+bindsym $mod+Shift+x exec i3lock -d -c 000000 && systemctl suspend
 
 # launch clion
 bindsym $mod+Shift+t exec "bash -i -c clion.sh %f"

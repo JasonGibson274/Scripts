@@ -145,12 +145,12 @@ source ~/.bash-git-prompt/gitprompt.sh
 
 # alias
 alias open=xdg-open
-alias core-on="xrandr --output DP3 --mode 1920x1080"
-alias core-off="xrandr --output DP3 --off"
+alias core-on="xrandr --output eDP-1 --auto --output DP-3 --auto --scale 1.6x1.6 --right-of eDP-1"
+alias core-off="xrandr --output DP-3 --off"
 
 export PATH="/home/jason/.cask/bin:$PATH"
 
-export CUDA_HOME=/usr/local/cuda/bin
+export CUDA_HOME=/usr/local/cuda-9.2
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
 PATH=${CUDA_HOME}/bin:${PATH}
 export PATH
