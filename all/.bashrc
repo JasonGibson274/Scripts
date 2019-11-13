@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-  # We have color support; assume it's compliant with Ecma-48
-  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-  # a case would tend to support setf rather than setaf.)
-  color_prompt=yes
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
     else
-  color_prompt=
+	color_prompt=
     fi
 fi
 
@@ -116,12 +116,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-source /opt/ros/melodic/setup.bash
-alias arc='source ~/catkin_ws/ar/devel/setup.bash && source /home/jason/catkin_ws/ar/src/autorally/autorally_util/setupEnvLocal.sh'
-alias rjc='source ~/catkin_ws/rj/devel/setup.bash'
-alias grc='source ~/catkin_ws/greenzie/devel/setup.bash'
+source /opt/ros/kinetic/setup.bash
+alias arc='source ~/catkin_ws/ar/devel/setup.bash && source /home/jason/catkin_ws/ar/src/autorally/autorally_util/setupEnvLocal.sh && source /home/jason/catkin_ws/ar/src/autorally_private/autorally_private_sandbox/setupEnvLocal.sh'
 alias alc='source ~/catkin_ws/alpha/devel/setup.bash'
+#arc
 alc
 
 # Git configuration
@@ -145,16 +143,13 @@ source ~/.bash-git-prompt/gitprompt.sh
 
 # alias
 alias open=xdg-open
-alias lab-on="xrandr --output eDP-1 --auto --output DP-3 --auto --scale 1.7x1.7 --right-of eDP-1 --primary"
-alias lab-on-pan="xrandr --output eDP-1 --auto --output DP-3 --auto --scale 1.7x1.7 --right-of eDP-1 --primary --panning 4096x1728"
-alias lab-off="xrandr --output DP-3 --off"
+alias core-on="xrandr --output DP3 --mode 1920x1080"
+alias core-off="xrandr --output DP3 --off"
 
 export PATH="/home/jason/.cask/bin:$PATH"
 
-export CUDA_HOME=/usr/local/cuda-9.2
-export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
-PATH=${CUDA_HOME}/bin:${PATH}
-export PATH
+export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
-#matlab
-PATH=${PATH}:/usr/local/MATLAB/R2018b/bin
+
+export PATH

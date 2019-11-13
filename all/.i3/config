@@ -11,7 +11,7 @@
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+font pango:monospace 20
 
 
 #tray_output primary
@@ -41,16 +41,19 @@ floating_modifier $mod
 
 # init programs into windows
 exec --no-startup-id i3-msg 'workspace 1; exec terminator'
+exec --no-startup-id i3-msg 'workspace 2; exec emacs'
 exec --no-startup-id i3-msg 'workspace 3; exec firefox'
+#for_window [class="Firefox"] move container to workspace 3
 exec --no-startup-id i3-msg 'workspace 4; exec thunderbird'
 for_window [class="thunderbird"] move container to workspace 4
+exec --no-startup-id i3-msg 'workspace 10; exec terminator'
 exec --no-startup-id i3-msg 'workspace 5; exec slack'
 for_window [class="Slack"] move container to workspace 5
 
 # backlight
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1.0 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.6 # increase screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # notification
 exec killall -q notify-osd
@@ -62,7 +65,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 
 # configure lock
-exec --no-startup-id xautolock -time 15 -locker 'i3lock -d -c 000000 && systemctl suspend'
+exec --no-startup-id xautolock -time 15 -locker 'i3lock -d -c 000000'
 
 # wallpaper
 exec /usr/bin/feh --bg-scale ~/.i3/nest_point.png
@@ -74,10 +77,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 
 # lock computer
-bindsym $mod+Shift+x exec i3lock -d -c 000000 && systemctl suspend
-
-# launch clion
-bindsym $mod+Shift+t exec "bash -i -c clion.sh %f"
+bindsym $mod+Shift+x exec i3lock -d -c 000000
 
 #move current workspace
 bindsym $mod+q move workspace to output left
@@ -90,9 +90,9 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # switch to home config
-bindsym $mod+y exec xrandr --auto --output DP-1 --mode 3840x2160 --left-of DP-2 --primary && xrandr --output eDP-1 --off && xrandr --output DP-2 --rotate right
+bindsym $mod+y exec xrandr --auto --output DP-1-1 --mode 3840x2160 --left-of DP-1-2 && xrandr --output eDP-1-1 --off && xrandr --output DP-1-2 --primary
 # mobile config
-bindsym $mod+u exec xrandr --output DP-1 --off && xrandr  --output DP-2 --off && xrandr --output eDP-1 --auto --primary
+bindsym $mod+u exec xrandr --output DP-1-1 --off && xrandr  --output DP-1-2 --off && xrandr --output eDP-1-1 --auto --primary
 
 # change focus
 bindsym $mod+$left focus left
