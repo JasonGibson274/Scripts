@@ -1,12 +1,18 @@
 git bash prompt
 https://github.com/magicmonty/bash-git-prompt
 
-curses system stats
-glances
-
-top right stats ubuntu
-indicator-multiload
-
-
-fans
-https://ineed.coffee/3838/a-beginners-tutorial-for-mbpfan-under-ubuntu/
+sudo apt install xclip
+sudo apt install git
+sudo apt install feh
+sudo apt install dunst
+sudo apt install curl
+sudo apt install ros-melodic-desktop-full
+sudo apt install glances
+sudo apt install python-catkin-tools
+sudo apt install vim
+sudo apt install python-wstool
+sudo apt install -y libzmqpp-dev libeigen3-dev
+sudo apt install -y libvulkan1 vulkan-utils gdb
+sudo apt install terminator
+sudo apt install i3
+sudo apt install openssh-server
