@@ -122,7 +122,9 @@ alias arc='source ~/catkin_ws/ar/devel/setup.bash && source /home/jason/catkin_w
 alias rjc='source ~/catkin_ws/rj/devel/setup.bash'
 alias grc='source ~/catkin_ws/greenzie/devel/setup.bash'
 alias alc='source ~/catkin_ws/alpha/devel/setup.bash'
-alc
+rjc
+
+alias open='xdg-open'
 
 # Git configuration
 GIT_PROMPT_ONLY_IN_REPO=1
@@ -144,7 +146,6 @@ GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
 
 # alias
-alias open=xdg-open
 alias lab-on="xrandr --output eDP-1 --auto --output DP-3 --auto --scale 1.7x1.7 --right-of eDP-1 --primary"
 alias lab-on-pan="xrandr --output eDP-1 --auto --output DP-3 --auto --scale 1.7x1.7 --right-of eDP-1 --primary --panning 4096x1728"
 alias lab-off="xrandr --output DP-3 --off"
@@ -158,3 +159,19 @@ export PATH
 
 #matlab
 PATH=${PATH}:/usr/local/MATLAB/R2018b/bin
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/jason/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/jason/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "/home/jason/anaconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/jason/anaconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+

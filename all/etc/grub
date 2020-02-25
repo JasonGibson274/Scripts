@@ -33,7 +33,9 @@ GRUB_CMDLINE_LINUX=""
 #GRUB_INIT_TUNE="480 440 1"
 
 # More readable font on high dpi screen, generated with
-sudo grub-mkfont --output=/boot/grub/fonts/DejaVuSansMono24.pf2 \
-   --size=24 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf
+#sudo grub-mkfont --output="/boot/grub/fonts/DejaVuSansMono24.pf2 --size="24" /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
+sudo grub-mkfont --output=/boot/grub/fonts/DejaVuSansMono24.pf2 --size=24 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf
 
-GRUB_FONT="/boot/grub/unicode.pf2"
+
+
+GRUB_FONT="/boot/grub/fonts/DejaVuSansMono24.pf2"

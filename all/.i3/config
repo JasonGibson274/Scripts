@@ -62,7 +62,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 
 # configure lock
-exec --no-startup-id xautolock -time 15 -locker 'i3lock -d -c 000000 && systemctl suspend'
+#exec --no-startup-id xautolock -time 15 -locker 'i3lock -d -c 000000 && sleep 1 && systemctl suspend'
+exec --no-startup-id xautolock -time 15 -locker 'i3lock -d -c 000000'
 
 # wallpaper
 exec /usr/bin/feh --bg-scale ~/.i3/nest_point.png
@@ -74,7 +75,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 
 # lock computer
-bindsym $mod+Shift+x exec i3lock -d -c 000000 && systemctl suspend
+bindsym $mod+Shift+x exec i3lock -d -c 000000 # && sleep 1 && systemctl suspend
 
 # launch clion
 bindsym $mod+Shift+t exec "bash -i -c clion.sh %f"
