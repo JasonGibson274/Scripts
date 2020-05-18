@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-  # We have color support; assume it's compliant with Ecma-48
-  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-  # a case would tend to support setf rather than setaf.)
-  color_prompt=yes
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
     else
-  color_prompt=
+	color_prompt=
     fi
 fi
 
@@ -116,13 +116,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
 source /opt/ros/melodic/setup.bash
 alias arc='source ~/catkin_ws/ar/devel/setup.bash && source /home/jason/catkin_ws/ar/src/autorally/autorally_util/setupEnvLocal.sh'
 alias rjc='source ~/catkin_ws/rj/devel/setup.bash'
 alias grc='source ~/catkin_ws/greenzie/devel/setup.bash'
 alias alc='source ~/catkin_ws/alpha/devel/setup.bash'
-rjc
+arc
 
 alias open='xdg-open'
 
@@ -145,33 +144,10 @@ GIT_PROMPT_ONLY_IN_REPO=1
 # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 source ~/.bash-git-prompt/gitprompt.sh
 
-# alias
-alias lab-on="xrandr --output eDP-1 --auto --output DP-3 --auto --scale 1.7x1.7 --right-of eDP-1 --primary"
-alias lab-on-pan="xrandr --output eDP-1 --auto --output DP-3 --auto --scale 1.7x1.7 --right-of eDP-1 --primary --panning 4096x1728"
-alias lab-off="xrandr --output DP-3 --off"
 
-export PATH="/home/jason/.cask/bin:$PATH"
-
-export CUDA_HOME=/usr/local/cuda-9.2
+export CUDA_HOME=/usr/local/cuda
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
 PATH=${CUDA_HOME}/bin:${PATH}
+PATH=/home/jason/.local/bin:${PATH}
+PATH=${PATH}:/usr/local/MATLAB/R2019b/bin
 export PATH
-
-#matlab
-PATH=${PATH}:/usr/local/MATLAB/R2018b/bin
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/home/jason/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/home/jason/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/home/jason/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/home/jason/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-# <<< conda initialize <<<
-

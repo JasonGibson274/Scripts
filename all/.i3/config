@@ -1,3 +1,4 @@
+
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -47,10 +48,23 @@ for_window [class="thunderbird"] move container to workspace 4
 exec --no-startup-id i3-msg 'workspace 5; exec slack'
 for_window [class="Slack"] move container to workspace 5
 
+# steam test
+# https://github.com/ValveSoftware/steam-for-linux/issues/1040
+for_window [class="^Steam$" title="^Friends$"] floating enable
+for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+for_window [title="^Steam Keyboard$"] floating enable
+
 # backlight
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1.0 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.6 # increase screen brightness
+#bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1.0 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.6 # increase screen brightness
 
 # notification
 exec killall -q notify-osd
@@ -62,8 +76,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 
 # configure lock
-#exec --no-startup-id xautolock -time 15 -locker 'i3lock -d -c 000000 && sleep 1 && systemctl suspend'
-exec --no-startup-id xautolock -time 15 -locker 'i3lock -d -c 000000'
+exec --no-startup-id xautolock -time 45 -locker 'i3lock -d -c 000000'
 
 # wallpaper
 exec /usr/bin/feh --bg-scale ~/.i3/nest_point.png
@@ -75,13 +88,17 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 
 # lock computer
-bindsym $mod+Shift+x exec i3lock -d -c 000000 # && sleep 1 && systemctl suspend
+bindsym $mod+Shift+x exec i3lock -d -c 000000
+
+# setup screens
+bindsym $mod+y exec xrandr --output DP-4 --rotate right --right-of DP-2
 
 # launch clion
-bindsym $mod+Shift+t exec "bash -i -c clion.sh %f"
+#bindsym $mod+Shift+t exec "bash -i -c clion.sh %f"
 
 #move current workspace
 bindsym $mod+q move workspace to output left
+
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -89,11 +106,6 @@ bindsym $mod+d exec dmenu_run
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
-# switch to home config
-bindsym $mod+y exec xrandr --auto --output DP-1 --mode 3840x2160 --left-of DP-2 --primary && xrandr --output eDP-1 --off && xrandr --output DP-2 --rotate right
-# mobile config
-bindsym $mod+u exec xrandr --output DP-1 --off && xrandr  --output DP-2 --off && xrandr --output eDP-1 --auto --primary
 
 # change focus
 bindsym $mod+$left focus left

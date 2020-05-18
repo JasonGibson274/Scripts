@@ -16,3 +16,13 @@ sudo apt install -y libvulkan1 vulkan-utils gdb
 sudo apt install terminator
 sudo apt install i3
 sudo apt install openssh-server
+
+# install GTSAM
+
+# install editorconfig
+
+# install clion
+
+# install slack
+
+# 
