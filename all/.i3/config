@@ -14,7 +14,6 @@
 # is used in the bar {} block below.
 font pango:monospace 10
 
-
 #tray_output primary
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -91,14 +90,21 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+x exec i3lock -d -c 000000
 
 # setup screens
-bindsym $mod+y exec xrandr --output DP-4 --rotate right --right-of DP-2
+bindsym $mod+y exec "xrandr --output DP-4 --auto --rotate right --right-of DP-2 && xrandr --output DP-2 --primary && xrandr --output HDMI-0 --off >> /tmp/xrandr.txt"
 
-# launch clion
-#bindsym $mod+Shift+t exec "bash -i -c clion.sh %f"
+# Pulse Audio controls
+bindcode 69 exec pactl set-sink-volume `pactl list short sinks | grep RUNNING | cut -f1` +5% #increase sound volume
+bindcode 68 exec pactl set-sink-volume `pactl list short sinks | grep RUNNING | cut -f1` -5% #decrease sound volume
+bindcode 70 exec pactl set-sink-mute `pactl list short sinks | grep RUNNING | cut -f1` toggle # mute sound
+
+# setup keys for spotify
+bindcode 73 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause # pause/play toggle
+bindcode 72 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous # previous
+bindcode 74 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next # next
+
 
 #move current workspace
 bindsym $mod+q move workspace to output left
-
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run

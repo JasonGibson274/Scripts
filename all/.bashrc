@@ -117,10 +117,11 @@ if ! shopt -oq posix; then
 fi
 
 source /opt/ros/melodic/setup.bash
-alias arc='source ~/catkin_ws/ar/devel/setup.bash && source /home/jason/catkin_ws/ar/src/autorally/autorally_util/setupEnvLocal.sh'
+alias arc='source ~/catkin_ws/ar/devel/setup.bash && source /home/jason/catkin_ws/ar/src/autorally_private/autorally_private_sandbox/setupEnvLocal.sh'
 alias rjc='source ~/catkin_ws/rj/devel/setup.bash'
 alias grc='source ~/catkin_ws/greenzie/devel/setup.bash'
 alias alc='source ~/catkin_ws/alpha/devel/setup.bash'
+export AR_CHASSIS="alpha"
 arc
 
 alias open='xdg-open'
