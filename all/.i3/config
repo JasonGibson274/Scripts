@@ -91,6 +91,7 @@ bindsym $mod+Shift+x exec i3lock -d -c 000000
 
 # setup screens
 bindsym $mod+y exec "xrandr --output DP-4 --auto --rotate right --right-of DP-2 && xrandr --output DP-2 --primary && xrandr --output HDMI-0 --off >> /tmp/xrandr.txt"
+bindsym $mod+u exec "xrandr --output DP-4 --auto --rotate right --right-of DP-2 && xrandr --output DP-2 --primary && xrandr --output HDMI-0 --auto --right-of DP-4"
 
 # Pulse Audio controls
 bindcode 69 exec pactl set-sink-volume `pactl list short sinks | grep RUNNING | cut -f1` +5% #increase sound volume
