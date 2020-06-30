@@ -152,3 +152,11 @@ PATH=${CUDA_HOME}/bin:${PATH}
 PATH=/home/jason/.local/bin:${PATH}
 PATH=${PATH}:/usr/local/MATLAB/R2019b/bin
 export PATH
+
+function run() {
+  number=$1
+  shift
+  for n in $(seq $number); do
+    $@
+  done
+}
