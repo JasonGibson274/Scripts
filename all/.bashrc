@@ -148,6 +148,7 @@ source ~/.bash-git-prompt/gitprompt.sh
 
 export CUDA_HOME=/usr/local/cuda
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 PATH=${CUDA_HOME}/bin:${PATH}
 PATH=/home/jason/.local/bin:${PATH}
 PATH=${PATH}:/usr/local/MATLAB/R2019b/bin

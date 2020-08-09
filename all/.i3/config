@@ -60,6 +60,9 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 
+# make sure that teams is floating by default	
+for_window [class="^teams$"] floating enable
+
 # backlight
 # Sreen brightness controls
 #bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1.0 # increase screen brightness
@@ -103,6 +106,8 @@ bindcode 73 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /
 bindcode 72 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous # previous
 bindcode 74 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next # next
 
+# get spotify from scratch pad
+bindsym $mod+m [instance="spotify"] scratchpad show
 
 #move current workspace
 bindsym $mod+q move workspace to output left
