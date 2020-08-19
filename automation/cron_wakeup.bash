@@ -3,9 +3,7 @@
 pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 0%
 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Play
 
-echo $1
-
-seconds=$(($1*60))
+seconds=$(($(( $RANDOM % 10 + 10))*60))
 echo $seconds
 increment=$(echo "scale=2;50/$seconds"|bc)
 echo $increment
@@ -21,4 +19,4 @@ do
 done
 
 
-pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 60%
+pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 50%
